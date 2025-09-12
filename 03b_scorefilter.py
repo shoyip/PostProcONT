@@ -44,8 +44,11 @@ for dataset in ["input", "output"]:
     ymax = ax.get_ylim()[1]
     ax.text(1.1*lower, 0.9*ymax, "Filtered reads:\n"+str(count), color="tab:red", ha="left", va="center")
     
-    plot_png = assets_folder + "/" + exp_title + "/bitscore_stats.png"
+    plot_png = assets_folder + "/" + exp_title + f"/bitscore_stats_{dataset}.png"
     fig.savefig(plot_png, bbox_inches="tight")
     plt.close()
     
     print(f"Filtered {count} sequences to {filtered_assignments_filename}.")
+
+    counts_file = data_folder + "/interim/" + exp_title + f"/counts_{dataset}.tsv"
+    assignments_df["sseqid"].value_counts().to_csv(counts_file, sep="\t")
