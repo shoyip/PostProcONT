@@ -13,8 +13,6 @@ with open(data_folder + "/interim/" + exp_title + "/demux_stats.txt") as f:
 labels = ["Input", "Output", "Multiple", "Unknown"]
 labels_values = [l+": "+str(v) for l, v in zip(labels, values)]
 
-print(values)
-
 fig = plt.figure()
 plt.pie(values, labels=labels_values, startangle=90)
 plt.title(f"Proportions of demultiplexed reads for {exp_title}")
