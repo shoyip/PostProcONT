@@ -3,8 +3,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 def main():
-    filename_in =  "data/interim/S1AvsAR_15May2025/input_counts.txt"
-    filename_out = "data/interim/S1AvsAR_15May2025/output_counts.txt"
+    filename_in =  "data/interim/S1AvsAAPF_20June2025/input_counts.txt"
+    filename_out = "data/interim/S1AvsAAPF_20June2025/output_counts.txt"
 
     df_in = pd.read_csv(filename_in, sep='\t', header=None)
     df_out = pd.read_csv(filename_out, sep='\t', header=None)
@@ -24,7 +24,7 @@ def main():
 
     #hist2d(df.counts_in, df.counts_out)
 
-    df.sort_values('abs_log_enrichment', ascending=False).log_enrichment.to_csv('data/processed/S1AvsAR_15May2025/log_enrichment.csv')
+    df.sort_values('abs_log_enrichment', ascending=False).log_enrichment.to_csv('data/processed/S1AvsAAPF_20June2025/log_enrichment.csv')
 
     #plt.figure()
     #plt.hist(df.log_enrichment)

@@ -14,6 +14,13 @@ def main():
 
     df = ar_logenr.merge(aapf_enr, left_on='id', right_on='descs_sho', suffixes=('_ar', '_aapf'))
 
+    print('AAPF specific variants')
+    print(df.query("log_enrichment_ar < 0 & log_enrichment_aapf > 0"))
+
+    print('AR specific variants')
+    print(df.query("log_enrichment_ar > 0 & log_enrichment_aapf < 0"))
+
+    print('AAPF and AR specific variants')
     print(df.query("log_enrichment_ar > 0 & log_enrichment_aapf > 0"))
 
     plt.figure()
