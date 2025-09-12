@@ -3,6 +3,7 @@
 source .env
 
 mkdir -p $DATA_FOLDER/{raw,interim,processed}/$EXP_TITLE
+mkdir -p $ASSETS_FOLDER/$EXP_TITLE
 
 if [ -f $DATA_FOLDER/interim/$EXP_TITLE/reads.fasta ]; then
     rm $DATA_FOLDER/interim/$EXP_TITLE/reads.fasta
